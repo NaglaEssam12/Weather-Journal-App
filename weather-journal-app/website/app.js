@@ -1,5 +1,5 @@
 /* Global Variables */
-const apiKey = '&appid=af564acf69487dd8e820a8880c923a2a';  //my own API key
+const apiKey = '&appid=af564acf69487dd8e820a8880c923a2a&units=imperial';  //my own API key
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 
 // Create a new date instance dynamically with JS
@@ -61,9 +61,9 @@ const updateUI = async()=>{
     try{
         const allData = await request.json();
         console.log(allData);
-        document.getElementById('date').innerHTML = "Date is : " + allData[0].date;
-        document.getElementById('temp').innerHTML = "<br>Temprature is :" +allData[0].temperature+"<br>";
-        document.getElementById('content').innerHTML = "Data Entry is : " +allData[0].entry;
+        document.getElementById('date').innerHTML = "Date is : " + allData.date;
+        document.getElementById('temp').innerHTML = "<br>Temprature is : " + allData.temperature+"<br>";
+        document.getElementById('content').innerHTML = "Data Entry is : " + allData.entry;
         
     }
     catch(error) {
